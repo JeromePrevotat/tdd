@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.humanbooster.tdd.StringReverserTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.120 s <<< FAILURE! -- in com.humanbooster.tdd.StringReverserTest
+com.humanbooster.tdd.StringReverserTest.null_should_return_null(String) -- Time elapsed: 0.041 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String arg0] in method [void com.humanbooster.tdd.StringReverserTest.null_should_return_null(java.lang.String)].
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.humanbooster.tdd.StringReverserTest.empty_string_should_return_empty_string(String) -- Time elapsed: 0.004 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String arg0] in method [void com.humanbooster.tdd.StringReverserTest.empty_string_should_return_empty_string(java.lang.String)].
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.humanbooster.tdd.StringReverserTest.multiple_characters_should_return_reversed_string(String) -- Time elapsed: 0.004 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String arg0] in method [void com.humanbooster.tdd.StringReverserTest.multiple_characters_should_return_reversed_string(java.lang.String)].
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.humanbooster.tdd.StringReverserTest.single_character_should_return_same_character(String) -- Time elapsed: 0.005 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String arg0] in method [void com.humanbooster.tdd.StringReverserTest.single_character_should_return_same_character(java.lang.String)].
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
