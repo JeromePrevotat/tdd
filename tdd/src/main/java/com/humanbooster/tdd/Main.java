@@ -1,11 +1,10 @@
 package com.humanbooster.tdd;
 
-import com.humanbooster.tdd.integertoroman.IntegerToRoman;
-import com.humanbooster.tdd.stringreverser.StringReverser;
+import com.humanbooster.tdd.stringcalculator.StringCalculator;
 
 public class Main {
     public static void main(String[] args) {
-        IntegerToRoman.intToRoman(7);
+        StringCalculator.add("666,333");
 
     }
 }

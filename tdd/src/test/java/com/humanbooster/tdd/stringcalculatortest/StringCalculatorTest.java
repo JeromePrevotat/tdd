@@ -33,7 +33,7 @@ public class StringCalculatorTest {
 
     @Test
     public void input_number_greater_than_1000_should_return_be_ignored() throws Exception {
-        assertEquals(1, new StringCalculator().add("1000,1"));
+        assertEquals(1, new StringCalculator().add("1001,1"));
     }
 
     @Test
@@ -41,6 +41,7 @@ public class StringCalculatorTest {
         assertEquals(1, new StringCalculator().add("1"));
     }
 
+    // Create a new object wwith both attribute, silence Exception, test it, return both if exists
     @Test
     public void input_negative_numbers_should_throw_exception_and_return_the_list() throws Exception {
         assertAll(
@@ -67,8 +68,15 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void input_starting_with_two_backslashes_defines_a_custome_separator_and_is_valid() throws Exception {
+    public void input_starting_with_two_backslashes_defines_a_custom_separator_and_is_valid() throws Exception {
         assertEquals(3, new StringCalculator().add("//;\n1;2"));
+    }
+
+    @Test
+    public void input_custom_separator_cannot_be_a_empty() throws Exception {
+        assertThrowsExactly(IllegalArgumentException.class, () -> {
+            new StringCalculator().add("//\n1,2");
+        });
     }
 
     @Test
@@ -103,7 +111,6 @@ public class StringCalculatorTest {
         assertEquals(100, new StringCalculator().add("50,50"));
     }
 
-    @Test
     @ParameterizedTest
     @CsvSource(
         {
@@ -125,7 +132,6 @@ public class StringCalculatorTest {
         assertEquals(expected, new StringCalculator().add(number1 + "," + number2));
     }
 
-    @Test
     @ParameterizedTest
     @CsvSource(
         {
@@ -138,7 +144,6 @@ public class StringCalculatorTest {
         assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3));
     }
 
-    @Test
     @ParameterizedTest
     @CsvSource(
         {
@@ -151,7 +156,6 @@ public class StringCalculatorTest {
         assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3 + "," + n4));
     }
 
-    @Test
     @ParameterizedTest
     @CsvSource(
         {
@@ -164,12 +168,10 @@ public class StringCalculatorTest {
         assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5));
     }
 
-    @Test
     @ParameterizedTest
     @CsvSource(
         {
             //"expected, number1, number2...",
-            "390,100,100,60,40,90",
             "750,75,300,25,50,50,250"
         }
     )
@@ -177,29 +179,18 @@ public class StringCalculatorTest {
         assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5 + "," + n6));
     }
 
-    @Test
     @ParameterizedTest
     @CsvSource(
         {
             //"expected, number1, number2...",
-            "390,100,100,60,40,90",
-            "750,75,300,25,50,50,250"
+            "75,300,25,50,50,250"
         }
     )
-    public void input_with_newline_separator_with_random_number_of_digits_should_return_the_sum_of_all_6(int expected, int n1, int n2, int n3, int n4, int n5, int n6) throws Exception {
-        assertEquals(expected, new StringCalculator().add(n1 + "\n" + n2 + "\n" + n3 + "\n" + n4 + "\n" + n5 + "\n" + n6));
+    public void input_with_custom_separator_with_random_number_of_digits_should_return_the_sum_of_all_6(int n1, int n2, int n3, int n4, int n5, int n6) throws Exception {
+        assertEquals(750, new StringCalculator().add("//!\n" + n1 + "!" + n2 + "!" + n3 + "!" + n4 + "!" + n5 + "!" + n6));
     }
 
-    @Test
-    @ParameterizedTest
-    @CsvSource(
-        {
-            //"expected, number1, number2...",
-            "//!\n390,100,100,60,40,90",
-            "//!\n750,75,300,25,50,50,250"
-        }
-    )
-    public void input_with_custom_separator_with_random_number_of_digits_should_return_the_sum_of_all_6(int expected, int n1, int n2, int n3, int n4, int n5, int n6) throws Exception {
-        assertEquals(expected, new StringCalculator().add(n1 + "!" + n2 + "!" + n3 + "!" + n4 + "!" + n5 + "!" + n6));
-    }
+    /////////////////////////////////////////////////////////////////////////////////
+    /// LEADING ZERO TESTS                                                        ///
+    /////////////////////////////////////////////////////////////////////////////////
 }
