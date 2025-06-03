@@ -5,6 +5,10 @@ import java.util.List;
 
 public class StringCalculator {
     public static int add(String input) {
+        List<String> separatorList = new ArrayList<>();
+        // ADD BOTH DEFAULT SEPARATORS
+        separatorList.add(",");
+        separatorList.add("\n");
         String separator = "";
         String cleanedInput = input;
         List<Integer> negativeNumbers = new ArrayList<>();
@@ -21,25 +25,20 @@ public class StringCalculator {
             // MULTIPLE CHARACTERS SEPARATOR
             if (separator.length() != 1) throw new IllegalArgumentException("Separator must be a single character");
             for (String digit : digits) if (separator.contains(digit)) throw new IllegalArgumentException("Invalid separator");
+            // ADDS CUSTOM SEPARATOR TO THE LIST
+            separatorList.add(separator);
+            // REMOVE CUSTOM SEPARATOR FROM INPUT
             cleanedInput = input.substring( 4);
         }
-        if (cleanedInput.contains("\n") && separator.isEmpty()) separator = "\n";
-        if (cleanedInput.contains(",") && separator.isEmpty()) separator = ",";
-        cleanedInput = cleanedInput.replaceAll(",", separator);
-        String[] stringNumbers = cleanedInput.split(separator);
-        System.out.println("Separator: " + separator);
-        System.out.println("cleanedInput: " + cleanedInput);
-        for (String number : stringNumbers) {
-            System.out.println("Number: " + number);
-        }
+        // REPLACE ALL SEPARATOR BY A COMMA
+        for (String sep : separatorList) cleanedInput = cleanedInput.replace(sep, ",");
+        // SPLIT THE INPUT BY COMMA
+        String[] stringNumbers = cleanedInput.split(separatorList.get(0));
         try {
-            System.out.println("TRY");
             for(String number : stringNumbers){
-                System.out.println("FOR");
                 // Skip empty strings
                 if (number.isEmpty()) continue;
                 int n = Integer.parseInt(number.trim());
-                System.out.println("Parsed number: " + n);
                 // Handle negative numbers
                 if (number.charAt(0) == '-') negativeNumbers.add(n);
                 // Ignore numbers greater than 1000
@@ -49,7 +48,7 @@ public class StringCalculator {
         } catch (Exception e) {
             System.err.print(e.getMessage());
         }
-        System.out.println("Result: " + result);
+        // System.out.println("Result: " + result);
         return result;
     }
 }

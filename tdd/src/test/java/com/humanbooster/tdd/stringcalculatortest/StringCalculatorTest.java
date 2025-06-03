@@ -20,25 +20,25 @@ public class StringCalculatorTest {
     @Test
     public void input_null_should_return_null_exeption() {
         assertThrowsExactly(NullPointerException.class, () -> {
-            new StringCalculator().add(null);
+            StringCalculator.add(null);
         });
     }
 
     @Test
     public void input_empty_should_return_illegal_argument_exception(){
         assertThrowsExactly(IllegalArgumentException.class, () -> {
-            new StringCalculator().add("");
+            StringCalculator.add("");
         });
     }
 
     @Test
     public void input_number_greater_than_1000_should_return_be_ignored() throws Exception {
-        assertEquals(1, new StringCalculator().add("1001,1"));
+        assertEquals(1, StringCalculator.add("1001,1"));
     }
 
     @Test
     public void input_should_contain_at_least_one_number() throws Exception {
-        assertEquals(1, new StringCalculator().add("1"));
+        assertEquals(1, StringCalculator.add("1"));
     }
 
     // Create a new object wwith both attribute, silence Exception, test it, return both if exists
@@ -46,51 +46,56 @@ public class StringCalculatorTest {
     public void input_negative_numbers_should_throw_exception_and_return_the_list() throws Exception {
         assertAll(
             () -> assertThrowsExactly(IllegalArgumentException.class, () -> {
-                new StringCalculator().add("-1,-2");
+                StringCalculator.add("-1,-2");
             }),
-            () -> assertEquals(List.of(-1, -2), new StringCalculator().add("-1,-2"))
+            () -> assertEquals(List.of(-1, -2), StringCalculator.add("-1,-2"))
         );
     }
 
     @Test
     public void input_two_digits_should_return_the_sum() throws Exception {
-        assertEquals(3, new StringCalculator().add("1,2"));
+        assertEquals(3, StringCalculator.add("1,2"));
     }
 
     @Test
     public void input_comma_separator_should_be_valid() throws Exception {
-        assertEquals(3, new StringCalculator().add("1,2"));
+        assertEquals(3, StringCalculator.add("1,2"));
     }
 
     @Test
     public void input_newline_separator_should_be_valid() throws Exception {
-        assertEquals(3, new StringCalculator().add("1\n2"));
+        assertEquals(3, StringCalculator.add("1\n2"));
     }
 
     @Test
     public void input_starting_with_two_backslashes_defines_a_custom_separator_and_is_valid() throws Exception {
-        assertEquals(3, new StringCalculator().add("//;\n1;2"));
+        assertEquals(3, StringCalculator.add("//;\n1;2"));
     }
 
     @Test
     public void input_custom_separator_cannot_be_a_empty() throws Exception {
         assertThrowsExactly(IllegalArgumentException.class, () -> {
-            new StringCalculator().add("//\n1,2");
+            StringCalculator.add("//\n1,2");
         });
     }
 
     @Test
     public void input_custom_separator_cannot_be_a_digit() throws Exception {
         assertThrowsExactly(IllegalArgumentException.class, () -> {
-            new StringCalculator().add("//1\n1,2");
+            StringCalculator.add("//1\n1,2");
         });
     }
 
     @Test
     public void input_custom_separator_must_be_a_single_character() throws Exception {
         assertThrowsExactly(IllegalArgumentException.class, () -> {
-            new StringCalculator().add("//;;\n1,2");
+            StringCalculator.add("//;;\n1,2");
         });
+    }
+
+    @Test
+    public void input_multiple_separators_should_return_the_sum() {
+        assertEquals(10, StringCalculator.add("//;\n1,2\n3;4"));
     }
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -98,17 +103,17 @@ public class StringCalculatorTest {
     /////////////////////////////////////////////////////////////////////////////////
     @Test
     public void input_with_two_single_digits_should_return_the_sum() throws Exception {
-        assertEquals(6, new StringCalculator().add("4,2"));
+        assertEquals(6, StringCalculator.add("4,2"));
     }
 
     @Test
     public void input_with_a_single_digit_and_a_two_digits_number_should_return_the_sum() throws Exception {
-        assertEquals(42, new StringCalculator().add("1, 41"));
+        assertEquals(42, StringCalculator.add("1, 41"));
     }
 
     @Test
     public void input_with_two_two_digits_numbers_should_return_the_sum() throws Exception {
-        assertEquals(100, new StringCalculator().add("50,50"));
+        assertEquals(100, StringCalculator.add("50,50"));
     }
 
     @ParameterizedTest
@@ -129,7 +134,7 @@ public class StringCalculatorTest {
         }
     )
     public void input_with_random_number_of_digits_should_return_the_sum_of_the_two(int expected, int number1, int number2) throws Exception {
-        assertEquals(expected, new StringCalculator().add(number1 + "," + number2));
+        assertEquals(expected, StringCalculator.add(number1 + "," + number2));
     }
 
     @ParameterizedTest
@@ -141,7 +146,7 @@ public class StringCalculatorTest {
         }
     )
     public void input_with_random_number_of_digits_should_return_the_sum_of_all_3(int expected, int n1, int n2, int n3) throws Exception {
-        assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3));
+        assertEquals(expected, StringCalculator.add(n1 + "," + n2 + "," + n3));
     }
 
     @ParameterizedTest
@@ -153,7 +158,7 @@ public class StringCalculatorTest {
         }
     )
     public void input_with_random_number_of_digits_should_return_the_sum_of_all_4(int expected, int n1, int n2, int n3, int n4) throws Exception {
-        assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3 + "," + n4));
+        assertEquals(expected, StringCalculator.add(n1 + "," + n2 + "," + n3 + "," + n4));
     }
 
     @ParameterizedTest
@@ -165,7 +170,7 @@ public class StringCalculatorTest {
         }
     )
     public void input_with_random_number_of_digits_should_return_the_sum_of_all_5(int expected, int n1, int n2, int n3, int n4, int n5) throws Exception {
-        assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5));
+        assertEquals(expected, StringCalculator.add(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5));
     }
 
     @ParameterizedTest
@@ -176,7 +181,7 @@ public class StringCalculatorTest {
         }
     )
     public void input_with_random_number_of_digits_should_return_the_sum_of_all_6(int expected, int n1, int n2, int n3, int n4, int n5, int n6) throws Exception {
-        assertEquals(expected, new StringCalculator().add(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5 + "," + n6));
+        assertEquals(expected, StringCalculator.add(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5 + "," + n6));
     }
 
     @ParameterizedTest
@@ -187,7 +192,7 @@ public class StringCalculatorTest {
         }
     )
     public void input_with_custom_separator_with_random_number_of_digits_should_return_the_sum_of_all_6(int n1, int n2, int n3, int n4, int n5, int n6) throws Exception {
-        assertEquals(750, new StringCalculator().add("//!\n" + n1 + "!" + n2 + "!" + n3 + "!" + n4 + "!" + n5 + "!" + n6));
+        assertEquals(750, StringCalculator.add("//!\n" + n1 + "!" + n2 + "!" + n3 + "!" + n4 + "!" + n5 + "!" + n6));
     }
 
     /////////////////////////////////////////////////////////////////////////////////

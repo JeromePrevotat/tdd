@@ -4,7 +4,8 @@ import com.humanbooster.tdd.stringcalculator.StringCalculator;
 
 public class Main {
     public static void main(String[] args) {
-        StringCalculator.add("666,333");
+        StringCalculator.add("//\n1,2");
+        StringCalculator.add("//;;\n1,2");
 
     }
 }
