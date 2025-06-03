@@ -27,7 +27,6 @@ public class IntegerToRoman {
         String[] mutliplesOfFivesInRomanNumerals = {"V", "L", "D"};
         
         while (power >= 0) {
-            i = 0;
             int chiffre = getDigitFromNumberAtIndex(number, power); // Get the digit at the current power of ten
             // 0 has no symbol and is ignored, it will be retrivied by the next power of ten
             if (chiffre == 0) {
@@ -61,13 +60,17 @@ public class IntegerToRoman {
                 power--;
                 continue;
             }
+            // 2 ou 3 == 7 ou 8 % 5
+            i = 0;
             while (i < chiffre % 5) {
                 result += powerOfTenInRomanNumerals[maxPowerOfTen - power];
                 i++;
             }
+            // 7 ou 8 -> Insert the correct symbol for 5 * 10^x
             if (chiffre - 5 > 0) result += mutliplesOfFivesInRomanNumerals[maxPowerOfTen - power];
             power--;
         }
+        // Reverse the Strin into the correct order
         StringBuilder sb = new StringBuilder(result);
         result = sb.reverse().toString();
         // System.out.println("===== RESULT: " + result + " =====\n");
