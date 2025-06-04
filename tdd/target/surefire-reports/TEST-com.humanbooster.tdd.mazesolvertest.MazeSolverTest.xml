@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.203" tests="39" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.187" tests="15" errors="1" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,43 +59,43 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="integer_7_should_return_VII" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.049"/>
-  <testcase name="integer_greater_upper_limit_should_throw_exception" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.004"/>
-  <testcase name="integer_456_should_return_CDLVI" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_2_should_return_II" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_8_should_return_VIII" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_30_should_return_XXX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_16_should_return_XVI" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_2000_should_return_MM" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_1_should_return_I" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_700_should_return_DCC" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_6_should_return_VI" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_500_should_return_D" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_400_should_return_CD" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_20_should_return_XX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_3000_should_return_MMM" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_5_should_return_V" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_200_should_return_CC" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_800_should_return_DCCC" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_1469_should_return_MCDLXIX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_9_should_return_IX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_60_should_return_LX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_654_should_return_DCLIV" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_1964_should_return_MCMLXIV" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_4_should_return_IV" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_80_should_return_LXXX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_70_should_return_LXX" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_3984_should_return_MMMCMLXXXIV" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_900_should_return_CM" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_under_lower_limit_should_throw_exception" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_10_should_return_X" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_3_should_return_III" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_40_should_return_XL" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_90_should_return_XC" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_50_should_return_L" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_2736_should_return_MMDCCXXXVI" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
-  <testcase name="integer_300_should_return_CCC" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_100_should_return_C" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_1000_should_return_M" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.002"/>
-  <testcase name="integer_600_should_return_DC" classname="com.humanbooster.tdd.integertoromantest.IntegerToRomanTest" time="0.001"/>
+  <testcase name="maze_without_end_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.007"/>
+  <testcase name="instructions_should_contain_only_valid_characters" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.014">
+    <error message="generateInstructions not implemented yet" type="java.lang.IllegalArgumentException"><![CDATA[java.lang.IllegalArgumentException: generateInstructions not implemented yet
+	at com.humanbooster.tdd.mazesolver.MazeSolver.generateInstructions(MazeSolver.java:78)
+	at com.humanbooster.tdd.mazesolvertest.MazeSolverTest.instructions_should_contain_only_valid_characters(MazeSolverTest.java:132)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="maze_with_multiple_start_and_end_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.007"/>
+  <testcase name="maze_without_start_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.006"/>
+  <testcase name="maze_without_path_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.005"/>
+  <testcase name="null_maze_should_throw_null_pointer_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.002"/>
+  <testcase name="null_instructions_should_throw_null_pointer_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.011">
+    <failure message="Unexpected exception type thrown, expected: &lt;java.lang.NullPointerException&gt; but was: &lt;java.lang.IllegalArgumentException&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.NullPointerException> but was: <java.lang.IllegalArgumentException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrowsExactly.assertThrowsExactly(AssertThrowsExactly.java:67)
+	at org.junit.jupiter.api.AssertThrowsExactly.assertThrowsExactly(AssertThrowsExactly.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrowsExactly(Assertions.java:3060)
+	at com.humanbooster.tdd.mazesolvertest.MazeSolverTest.null_instructions_should_throw_null_pointer_exception(MazeSolverTest.java:120)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.IllegalArgumentException: generateInstructions not implemented yet
+	at com.humanbooster.tdd.mazesolver.MazeSolver.generateInstructions(MazeSolver.java:78)
+	at com.humanbooster.tdd.mazesolvertest.MazeSolverTest.lambda$null_instructions_should_throw_null_pointer_exception$9(MazeSolverTest.java:120)
+	at org.junit.jupiter.api.AssertThrowsExactly.assertThrowsExactly(AssertThrowsExactly.java:53)
+	... 6 more
+]]></failure>
+  </testcase>
+  <testcase name="maze_without_start_nor_end_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.004"/>
+  <testcase name="empty_maze_should_throw_illegal_argument_exception(String[][])[1]" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.013"/>
+  <testcase name="empty_maze_should_throw_illegal_argument_exception(String[][])[2]" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.002"/>
+  <testcase name="empty_maze_should_throw_illegal_argument_exception(String[][])[3]" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.001"/>
+  <testcase name="empty_maze_should_throw_illegal_argument_exception(String[][])[4]" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.002"/>
+  <testcase name="maze_with_multiple_end_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.002"/>
+  <testcase name="empty_instructions_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.002"/>
+  <testcase name="maze_with_multiple_start_should_throw_illegal_argument_exception" classname="com.humanbooster.tdd.mazesolvertest.MazeSolverTest" time="0.002"/>
 </testsuite>

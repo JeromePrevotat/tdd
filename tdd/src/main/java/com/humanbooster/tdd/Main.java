@@ -1,11 +1,15 @@
 package com.humanbooster.tdd;
 
-import com.humanbooster.tdd.stringcalculator.StringCalculator;
+import com.humanbooster.tdd.mazesolver.MazeSolver;
 
 public class Main {
     public static void main(String[] args) {
-        StringCalculator.add("//\n1,2");
-        StringCalculator.add("//;;\n1,2");
-
+        MazeSolver mazeSolver = new MazeSolver();
+        String[][] maze = {
+            {"S"},
+            {"E"}
+        };
+        String instructions = "";
+        instructions = mazeSolver.solve(maze);
     }
 }
