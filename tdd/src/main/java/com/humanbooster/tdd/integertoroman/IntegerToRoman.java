@@ -12,7 +12,7 @@ public class IntegerToRoman {
         // 500 : D
         // 1000 : M
         // Easy Edge Case 5 * 10^x (5, 50, 500) & 10^x - 10^x-1 (9, 90, 900) 
-        // Hard Edge Case 5 * 10^x - 1 * 10^x (4, 40, 400) - 5 * 10^x + 1 * 10^x (6, 60, 600)
+        // Hard Edge Case 5 * 10^x - 1 * 10^x (4, 40, 400)
         //- `58` → `"LVIII"`
         //- `1994` → `"MCMXCIV"`
         // Exception Handling
@@ -40,13 +40,7 @@ public class IntegerToRoman {
                 power--;
                 continue;
             }
-            // 5 * 10^x + 1 * 10^x (6, 60, 600)
-            if (chiffre == 6){
-                result += powerOfTenInRomanNumerals[maxPowerOfTen - power];
-                result += mutliplesOfFivesInRomanNumerals[maxPowerOfTen - power];
-                power--;
-                continue;
-            }
+            
             // Insert the correct symbol for 5 * 10^x
             if (chiffre % 5 == 0 ){
                 result += mutliplesOfFivesInRomanNumerals[maxPowerOfTen - power];
@@ -66,7 +60,7 @@ public class IntegerToRoman {
                 result += powerOfTenInRomanNumerals[maxPowerOfTen - power];
                 i++;
             }
-            // 7 ou 8 -> Insert the correct symbol for 5 * 10^x
+            // 6, 7 ou 8 -> Insert the correct symbol for 5 * 10^x + Iy * 10^x-1 
             if (chiffre - 5 > 0) result += mutliplesOfFivesInRomanNumerals[maxPowerOfTen - power];
             power--;
         }

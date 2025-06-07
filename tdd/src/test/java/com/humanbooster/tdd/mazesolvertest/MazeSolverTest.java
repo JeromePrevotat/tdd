@@ -13,11 +13,16 @@ import org.junit.jupiter.params.provider.MethodSource;
 import com.humanbooster.tdd.mazesolver.MazeSolver;
 
 public class MazeSolverTest {
-    MazeSolver mazeSolver;
+    private MazeSolver mazeSolver;
+    private static final String START = "S";
+    private static final String END = "E";
+    private static final String WALL = "#";
+    private static final String PATH = ".";
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     /// MAZE VALIDATION TESTS                                                                           ///
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
     @BeforeEach
     public void setUp() {
         this.mazeSolver = new MazeSolver();

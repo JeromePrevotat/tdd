@@ -5,6 +5,10 @@ import java.util.List;
 
 public class MazeSolver {
     List<Node> nodes = new ArrayList<>();
+    private static final String START = "S";
+    private static final String END = "E";
+    private static final String WALL = "#";
+    private static final String PATH = ".";
 
     public String solve(String[][] maze) {
         // STEP 1: Validate the maze
@@ -51,7 +55,7 @@ public class MazeSolver {
         while (y < maze.length) {
             while(x < maze[y].length){
                 // SKIP WALLS
-                if (maze[y][x].equals("#")) continue;
+                if (maze[y][x].equals(WALL)) continue;
                 if (isNode(maze, x, y)) this.nodes.add(createNode(x, y, maze[y][x]));
                 x++;
             }
@@ -60,14 +64,15 @@ public class MazeSolver {
     }
 
     public boolean isNode(String[][] maze, int x, int y){
-        if (maze[y][x].equals("S") || maze[y][x].equals("E")) return true;
-        if (maze[y][x].equals(".")){
+        if (maze[y][x].equals(WALL)) return false;
+        if (maze[y][x].equals(START) || maze[y][x].equals(END)) return true;
+        if (maze[y][x].equals(PATH)){
             // CHECK NORTH & SOUTH ARE WALLS == Corridor E/W
-            if (y > 0 && maze[y-1][x].equals("#")
-            && y < maze.length - 1 && maze[y+1][x].equals("#")) return false;
+            if (y > 0 && maze[y-1][x].equals(WALL)
+            && y < maze.length - 1 && maze[y+1][x].equals(WALL)) return false;
             // CHECK EAST & WEST ARE WALLS == Corridor N/S
-            if (x > 0 && maze[y][x-1].equals("#")
-                && x < maze[y].length - 1 && maze[y][x+1].equals("#")) return false;
+            if (x > 0 && maze[y][x-1].equals(WALL)
+                && x < maze[y].length - 1 && maze[y][x+1].equals(WALL)) return false;
         }
         return true;
     }
